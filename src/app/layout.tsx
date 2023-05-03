@@ -1,6 +1,7 @@
 import '@/styles/globals.css'
 import { Inter } from 'next/font/google';
 import { cn } from '@/lib/utils'
+import Providers from '@/components/Providers';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -14,9 +15,9 @@ export default function RootLayout({
       className={cn('bg-whgite text-slate-900 antialiased', inter.className)}
     >
       <body className='min-h-screen bg-slate-50 dark:bg-slate-900 antialiased'>
-        {/* <Providers> */}
+        <Providers>
           {children}
-        {/* </Providers> */}
+        </Providers>
       </body>
     </html>
   )

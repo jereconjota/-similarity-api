@@ -1,13 +1,15 @@
-import React, { FC } from 'react'
-import { transferableAbortController } from 'util';
+'use client';
 
-interface ProviderProps {}
+import { ThemeProvider } from 'next-themes';
+import { FC, ReactNode } from 'react'
+import { SessionProvider } from 'next-auth/react'
 
-const Providers: FC<ProviderProps> = ({}) => {
+const Providers = ({ children }: { children: ReactNode }) => {
   return (
-    <div>Providers</div>
+    <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
+      <SessionProvider> {children} </SessionProvider>
+    </ThemeProvider>
   )
 }
 
-
-export default Providers;
+export default Providers
